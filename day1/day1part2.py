@@ -13,7 +13,7 @@ list2 = []
 similarity = []
 
 if r.status_code == 200:
-    content = r.text.splitlines()  # Split by lines, for example
+    content = r.text.splitlines()
     for elem in content:
         items = elem.split()
         list1.append(items[0])
