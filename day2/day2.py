@@ -8,9 +8,8 @@ cookies = {
 }
 
 r = requests.get(url, cookies=cookies)
-passed_report = 1
+passed_report = 0
 passed = None
-passed_reports = []
 
 if r.status_code == 200:
     content = r.text.splitlines()
@@ -66,7 +65,8 @@ if r.status_code == 200:
                     passed = False
                     break
             if passed:
-                passed_reports.append(cont)
+                passed_report += 1
+                passed = None
     print(passed_report)
 else:
     print('None')
